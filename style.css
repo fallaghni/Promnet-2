@@ -1,0 +1,416 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    padding-top:125px;
+    overflow-x:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#04142F 0%,#bbbec4 45%,#011941 100%);
+    color:#F5F5F5;
+    line-height:1.6;
+}
+
+/* ================= HEADER ================= */
+
+.hulu-cicing{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
+
+.opening{
+    background:linear-gradient(135deg,#04142F 0%,#bbbec4 45%,#011941);
+    background-size:300% 300%;
+    color:white;
+    padding:8px 20px;
+    text-align:center;
+    animation:gradientFlow 8s ease infinite;
+}
+
+.Judul-home{
+    font-size:clamp(28px,5vw,36px);
+    letter-spacing:1px;
+}
+
+/* ================= NAVBAR ================= */
+
+.link-navbar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    padding:10px;
+    background:#157baa;
+    border-bottom:1px solid rgba(83, 65, 3, 0.74);
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+
+.link-navbar a{
+    position:relative;
+    overflow:hidden;
+    flex:1;
+    text-decoration:none;
+    color:#5625db;
+    background:rgba(175, 26, 26, 0.856);
+    backdrop-filter:blur(10px);
+    padding:12px 5px;
+    text-align:center;
+    border-radius:16px;
+    border:1px solid rgba(79, 139, 230, 0.87);
+    transition:.35s ease;
+}
+
+.link-navbar a::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:linear-gradient(120deg,
+        transparent,
+        rgba(241, 5, 5, 0.45),
+        transparent);
+    transition:.6s;
+}
+
+.link-navbar a:hover::before{
+    left:140%;
+}
+
+.link-navbar a:hover{
+    background:linear-gradient(135deg,#4b4942,#C99A00);
+    color:#013691;
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(255,213,74,.35);
+}
+
+/* ================= CARD UMUM ================= */
+
+#intro,
+.edu,
+.deskripsi,
+.isi-about,
+.isi-project,
+.info-contact,
+.form-contact,
+.list-activ,
+.fokus-list,
+.hobi-list,
+.pendidikan-list{
+    width:75%;
+    max-width:750px;
+    margin:20px auto;
+    padding:20px;
+    background:rgba(209, 159, 159, 0.96);
+    color:#081F4D;
+    border-radius:24px;
+    border:1px solid rgba(252, 202, 40, 0.2);
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.25),
+        0 0 20px rgba(255,213,74,.08);
+    animation:fadeUp .8s ease forwards;
+    transition:.35s ease;
+}
+
+#intro:hover,
+.edu:hover,
+.deskripsi:hover,
+.isi-about:hover,
+.isi-project:hover,
+.info-contact:hover,
+.form-contact:hover,
+.list-activ:hover{
+    transform:translateY(-6px);
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.35),
+        0 0 25px rgba(255,213,74,.15);
+}
+
+/* ================= FOTO ================= */
+
+.foto-profil,
+.foto-project{
+    display:block;
+    width:250px;
+    height:250px;
+    margin:25px auto;
+    object-fit:cover;
+    border-radius:30px;
+    border:3px solid #FFD54A;
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.35),
+        0 0 20px rgba(255,213,74,.25);
+    animation:floatPhoto 5s ease-in-out infinite;
+    transition:.35s ease;
+}
+
+.foto-profil:hover,
+.foto-project:hover{
+    transform:scale(1.08) rotate(1deg);
+}
+
+/* ================= JUDUL ================= */
+
+.subjudul,
+.container-judul,
+.judul-project,
+.judul-contact,
+.judul-activ{
+    width:75%;
+    max-width:750px;
+    margin:35px auto 15px;
+    padding:12px;
+    text-align:center;
+    background:rgba(255,255,255,.95);
+    color:#FFD54A;
+    border-radius:18px;
+    border:1px solid rgba(255,213,74,.25);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+    text-shadow:0 2px 8px rgba(255,213,74,.25);
+    animation:fadeUp .8s ease;
+}
+
+/* ================= LIST ================= */
+
+.fokus-list,
+.hobi-list,
+.tools-list,
+.pendidikan-list,
+.list-activ{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.hobi-list li,
+.tools-list li,
+.pendidikan-list li,
+.list-activ li,
+.fokus-list li{
+    padding:6px;
+    transition:.3s;
+}
+
+.hobi-list li:hover,
+.tools-list li:hover,
+.pendidikan-list li:hover,
+.list-activ li:hover,
+.fokus-list li:hover{
+    color:#C99A00;
+    transform:translateX(8px);
+}
+
+/* ================= TABLE ================= */
+
+.data-diri,
+.tabel-r,
+.tabel-activ{
+    width:75%;
+    max-width:750px;
+    margin:20px auto;
+    border-collapse:collapse;
+    background:white;
+    color:#081F4D;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+}
+
+.data-diri th,
+.tabel-r th,
+.tabel-activ th,
+.tabel-contact th{
+    background:linear-gradient(90deg,#04142F,#081F4D,#FFD54A);
+    color:white;
+    padding:14px;
+}
+
+.data-diri td,
+.tabel-r td,
+.tabel-activ td{
+    padding:12px;
+    border:1px solid #e8e8e8;
+}
+
+.data-diri tbody tr:hover,
+.tabel-r tbody tr:hover,
+.tabel-activ tbody tr:hover{
+    background:#FFF8D6;
+}
+
+/* ================= LINK ================= */
+
+.about-link,
+.contact-link{
+    text-align:center;
+    margin:30px 0;
+}
+
+.about-link a,
+.contact-link a,
+.data-diri a,
+.isi-project a{
+    text-decoration:none;
+    color:#C99A00;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.about-link a:hover,
+.contact-link a:hover,
+.data-diri a:hover,
+.isi-project a:hover{
+    color:#04142F;
+    background:#FFD54A;
+    padding:4px 8px;
+    border-radius:8px;
+}
+
+/* ================= CONTACT ================= */
+
+.tabel-contact{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.tabel-contact td{
+    padding:12px;
+}
+
+.tabel-contact .label{
+    width:30%;
+    font-weight:bold;
+    color:#081F4D;
+}
+
+.tabel-contact .input,
+.tabel-contact .textarea{
+    width:70%;
+}
+
+.tabel-contact input,
+.tabel-contact textarea{
+    width:100%;
+    padding:10px;
+    border:1px solid #cfcfcf;
+    border-radius:10px;
+    transition:.3s;
+    font-family:inherit;
+}
+
+.tabel-contact input:focus,
+.tabel-contact textarea:focus{
+    outline:none;
+    border-color:#FFD54A;
+    box-shadow:0 0 10px rgba(255,213,74,.35);
+}
+
+.tabel-contact .tombol{
+    text-align:center;
+}
+
+.tabel-contact button{
+    padding:10px 24px;
+    background:linear-gradient(135deg,#FFD54A,#C99A00);
+    border:none;
+    border-radius:12px;
+    color:#04142F;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.tabel-contact button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(255,213,74,.35);
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    margin-top:40px;
+    padding:18px;
+    text-align:center;
+    background:linear-gradient(90deg,#04142F,#081F4D,#123A7A);
+    border-top:2px solid #FFD54A;
+    color:#FFE98A;
+}
+
+/* ================= ANIMASI ================= */
+
+@keyframes gradientFlow{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.97);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes floatPhoto{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+    body{
+        padding-top:145px;
+    }
+
+    #intro,
+    .edu,
+    .deskripsi,
+    .isi-about,
+    .isi-project,
+    .info-contact,
+    .form-contact,
+    .list-activ,
+    .fokus-list,
+    .hobi-list,
+    .pendidikan-list,
+    .judul-project,
+    .judul-contact,
+    .judul-activ,
+    .container-judul,
+    .subjudul,
+    .data-diri,
+    .tabel-r,
+    .tabel-activ{
+        width:92%;
+    }
+
+    .foto-profil,
+    .foto-project{
+        width:200px;
+        height:200px;
+    }
+
+    .link-navbar{
+        flex-wrap:wrap;
+    }
+
+    .link-navbar a{
+        flex:1 1 calc(50% - 8px);
+    }
+}
